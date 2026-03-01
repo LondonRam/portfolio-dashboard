@@ -123,6 +123,10 @@ def build_portfolio(config: dict, prices: dict, fx_rates: dict) -> dict:
         yahoo_ticker = h["yahooTicker"]
         local_price = prices.get(yahoo_ticker)
 
+        # Yahoo Finance returns London-listed stocks in pence (GBX), not pounds
+        if yahoo_ticker.endswith(".L") and local_price is not None:
+            local_price = local_price / 100.0
+
         if local_price is None:
             print(f"WARNING: No price for {h['ticker']} ({yahoo_ticker}), skipping", file=sys.stderr)
             continue
