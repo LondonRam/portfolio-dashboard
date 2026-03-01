@@ -1,29 +1,38 @@
 {
   "meta": {
-    "updatedAt": "2026-03-01T20:34:25.610708+00:00",
+    "updatedAt": "2026-03-01T20:55:51.019527+00:00",
     "positionCount": 34,
     "baseCurrency": "USD",
     "fxRates": {
-      "GBPUSD": 1.34176,
-      "EURUSD": 1.182173,
+      "GBPUSD": 1.341904,
+      "EURUSD": 1.182872,
       "TWDUSD": 0.031907
     }
   },
   "summary": {
-    "totalValueUSD": 203921.69,
-    "totalCostUSD": 212846.66,
-    "totalPnLUSD": -8924.97,
-    "totalPnLPct": -4.19
+    "totalValueUSD": 244269.78,
+    "totalCostUSD": 212863.42,
+    "totalPnLUSD": 31406.36,
+    "totalPnLPct": 14.75
   },
   "themes": [
     {
       "theme": "Semis / AI Infra",
-      "valueUSD": 87396.39,
-      "costUSD": 86597.37,
-      "pnlUSD": 799.02,
-      "pnlPct": 0.92,
+      "valueUSD": 94986.87,
+      "costUSD": 86610.71,
+      "pnlUSD": 8376.16,
+      "pnlPct": 9.67,
       "positions": 13,
-      "weightPct": 42.86
+      "weightPct": 38.89
+    },
+    {
+      "theme": "International / EM",
+      "valueUSD": 44751.73,
+      "costUSD": 36869.14,
+      "pnlUSD": 7882.59,
+      "pnlPct": 21.38,
+      "positions": 5,
+      "weightPct": 18.32
     },
     {
       "theme": "Hyperscalers / Tech",
@@ -32,16 +41,7 @@
       "pnlUSD": 3163.15,
       "pnlPct": 8.53,
       "positions": 4,
-      "weightPct": 19.74
-    },
-    {
-      "theme": "International / EM",
-      "valueUSD": 33870.68,
-      "costUSD": 36867.75,
-      "pnlUSD": -2997.07,
-      "pnlPct": -8.13,
-      "positions": 5,
-      "weightPct": 16.61
+      "weightPct": 16.48
     },
     {
       "theme": "Power / Energy",
@@ -50,16 +50,34 @@
       "pnlUSD": 622.65,
       "pnlPct": 2.95,
       "positions": 6,
-      "weightPct": 10.65
+      "weightPct": 8.89
+    },
+    {
+      "theme": "Precious Metals",
+      "valueUSD": 14071.2,
+      "costUSD": 6151.29,
+      "pnlUSD": 7919.91,
+      "pnlPct": 128.75,
+      "positions": 1,
+      "weightPct": 5.76
+    },
+    {
+      "theme": "Defence / Aerospace",
+      "valueUSD": 12552.17,
+      "costUSD": 10263.66,
+      "pnlUSD": 2288.51,
+      "pnlPct": 22.3,
+      "positions": 2,
+      "weightPct": 5.14
     },
     {
       "theme": "Critical Minerals",
-      "valueUSD": 9627.07,
-      "costUSD": 8813.23,
-      "pnlUSD": 813.84,
-      "pnlPct": 9.23,
+      "valueUSD": 9627.96,
+      "costUSD": 8813.97,
+      "pnlUSD": 813.99,
+      "pnlPct": 9.24,
       "positions": 2,
-      "weightPct": 4.72
+      "weightPct": 3.94
     },
     {
       "theme": "Other",
@@ -68,25 +86,7 @@
       "pnlUSD": 339.4,
       "pnlPct": 5.68,
       "positions": 1,
-      "weightPct": 3.09
-    },
-    {
-      "theme": "Defence / Aerospace",
-      "valueUSD": 4607.0,
-      "costUSD": 10263.03,
-      "pnlUSD": -5656.03,
-      "pnlPct": -55.11,
-      "positions": 2,
-      "weightPct": 2.26
-    },
-    {
-      "theme": "Precious Metals",
-      "valueUSD": 140.7,
-      "costUSD": 6150.63,
-      "pnlUSD": -6009.93,
-      "pnlPct": -97.71,
-      "positions": 1,
-      "weightPct": 0.07
+      "weightPct": 2.58
     }
   ],
   "accounts": [
@@ -94,15 +94,15 @@
       "account": "IBKR",
       "type": "margin",
       "baseCurrency": "USD",
-      "valueUSD": 111239.98,
-      "costUSD": 108985.43,
-      "pnlUSD": 2254.55,
+      "valueUSD": 111252.74,
+      "costUSD": 108998.17,
+      "pnlUSD": 2254.57,
       "pnlPct": 2.07,
       "positions": 19,
-      "weightPct": 54.55,
+      "weightPct": 45.55,
       "marginDebt": 47640,
-      "netLiquidation": 63599.98,
-      "marginUtilPct": 42.83
+      "netLiquidation": 63612.74,
+      "marginUtilPct": 42.82
     },
     {
       "account": "IG USD",
@@ -113,18 +113,18 @@
       "pnlUSD": 10499.87,
       "pnlPct": 15.8,
       "positions": 9,
-      "weightPct": 37.74
+      "weightPct": 31.51
     },
     {
       "account": "IG GBP",
       "type": "cash",
       "baseCurrency": "GBP",
-      "valueUSD": 15719.53,
-      "costUSD": 37398.92,
-      "pnlUSD": -21679.39,
-      "pnlPct": -57.97,
+      "valueUSD": 56054.86,
+      "costUSD": 37402.94,
+      "pnlUSD": 18651.92,
+      "pnlPct": 49.87,
       "positions": 6,
-      "weightPct": 7.71
+      "weightPct": 22.95
     }
   ],
   "holdings": [
@@ -287,13 +287,13 @@
       "name": "BlackRock World Mining Trust",
       "shares": 600,
       "avgCost": 8.55,
-      "avgCostUSD": 11.472,
+      "avgCostUSD": 11.4733,
       "localPrice": 10.3,
-      "priceUSD": 13.8201,
+      "priceUSD": 13.8216,
       "ccy": "GBP",
-      "valueUSD": 8292.07,
-      "costUSD": 6883.23,
-      "pnlUSD": 1408.85,
+      "valueUSD": 8292.96,
+      "costUSD": 6883.97,
+      "pnlUSD": 1409.0,
       "pnlPct": 20.47,
       "account": "IG GBP",
       "theme": "Critical Minerals"
@@ -304,13 +304,13 @@
       "name": "Fidelity Emerging Markets",
       "shares": 400,
       "avgCost": 11.37,
-      "avgCostUSD": 15.2558,
+      "avgCostUSD": 15.2574,
       "localPrice": 13.08,
-      "priceUSD": 17.5502,
+      "priceUSD": 17.5521,
       "ccy": "GBP",
-      "valueUSD": 7020.09,
-      "costUSD": 6102.32,
-      "pnlUSD": 917.76,
+      "valueUSD": 7020.84,
+      "costUSD": 6102.98,
+      "pnlUSD": 917.86,
       "pnlPct": 15.04,
       "account": "IG GBP",
       "theme": "International / EM"
@@ -321,14 +321,14 @@
       "name": "Franklin FTSE Korea ETF",
       "shares": 100,
       "avgCost": 50.87,
-      "avgCostUSD": 68.2553,
-      "localPrice": 0.819,
-      "priceUSD": 1.0989,
+      "avgCostUSD": 68.2626,
+      "localPrice": 81.9,
+      "priceUSD": 109.9019,
       "ccy": "GBP",
-      "valueUSD": 109.89,
-      "costUSD": 6825.53,
-      "pnlUSD": -6715.64,
-      "pnlPct": -98.39,
+      "valueUSD": 10990.19,
+      "costUSD": 6826.26,
+      "pnlUSD": 4163.93,
+      "pnlPct": 61.0,
       "account": "IG GBP",
       "theme": "International / EM"
     },
@@ -338,14 +338,14 @@
       "name": "WisdomTree Europe Defence",
       "shares": 175,
       "avgCost": 24.83,
-      "avgCostUSD": 33.3159,
-      "localPrice": 0.3417,
-      "priceUSD": 0.4585,
+      "avgCostUSD": 33.3195,
+      "localPrice": 34.175,
+      "priceUSD": 45.8596,
       "ccy": "GBP",
-      "valueUSD": 80.25,
-      "costUSD": 5830.28,
-      "pnlUSD": -5750.04,
-      "pnlPct": -98.62,
+      "valueUSD": 8025.42,
+      "costUSD": 5830.91,
+      "pnlUSD": 2194.52,
+      "pnlPct": 37.64,
       "account": "IG GBP",
       "theme": "Defence / Aerospace"
     },
@@ -355,14 +355,14 @@
       "name": "iShares Gold Producers",
       "shares": 200,
       "avgCost": 22.92,
-      "avgCostUSD": 30.7531,
-      "localPrice": 0.5243,
-      "priceUSD": 0.7035,
+      "avgCostUSD": 30.7564,
+      "localPrice": 52.43,
+      "priceUSD": 70.356,
       "ccy": "GBP",
-      "valueUSD": 140.7,
-      "costUSD": 6150.63,
-      "pnlUSD": -6009.93,
-      "pnlPct": -97.71,
+      "valueUSD": 14071.2,
+      "costUSD": 6151.29,
+      "pnlUSD": 7919.92,
+      "pnlPct": 128.75,
       "account": "IG GBP",
       "theme": "Precious Metals"
     },
@@ -372,14 +372,14 @@
       "name": "iShares Global Semis ETF",
       "shares": 567,
       "avgCost": 7.37,
-      "avgCostUSD": 9.8888,
-      "localPrice": 0.1006,
-      "priceUSD": 0.135,
+      "avgCostUSD": 9.8898,
+      "localPrice": 10.06,
+      "priceUSD": 13.4996,
       "ccy": "GBP",
-      "valueUSD": 76.53,
-      "costUSD": 5606.93,
-      "pnlUSD": -5530.4,
-      "pnlPct": -98.64,
+      "valueUSD": 7654.25,
+      "costUSD": 5607.53,
+      "pnlUSD": 2046.71,
+      "pnlPct": 36.5,
       "account": "IG GBP",
       "theme": "Semis / AI Infra"
     },
@@ -542,13 +542,13 @@
       "name": "SK Hynix (Frankfurt)",
       "shares": 30,
       "avgCost": 606.93,
-      "avgCostUSD": 717.4961,
+      "avgCostUSD": 717.9205,
       "localPrice": 608.0,
-      "priceUSD": 718.761,
+      "priceUSD": 719.1862,
       "ccy": "EUR",
-      "valueUSD": 21562.83,
-      "costUSD": 21524.88,
-      "pnlUSD": 37.95,
+      "valueUSD": 21575.59,
+      "costUSD": 21537.62,
+      "pnlUSD": 37.97,
       "pnlPct": 0.18,
       "account": "IBKR",
       "theme": "Semis / AI Infra"
