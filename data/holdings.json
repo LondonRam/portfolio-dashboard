@@ -17,9 +17,9 @@
 
     { "ticker": "BRWM",    "yahooTicker": "BRWM.L",  "name": "BlackRock World Mining Trust",  "shares": 600, "avgCost": 8.55,    "account": "IG GBP", "theme": "Critical Minerals",     "ccy": "GBP" },
     { "ticker": "FEML",    "yahooTicker": "FEML.L",  "name": "Fidelity Emerging Markets",    "shares": 400, "avgCost": 11.37,   "account": "IG GBP", "theme": "International / EM",    "ccy": "GBP" },
-    { "ticker": "FLXK",    "yahooTicker": "FLXK.L",  "name": "Franklin FTSE Korea ETF",      "shares": 100, "avgCost": 50.87,   "account": "IG GBP", "theme": "International / EM",    "ccy": "GBP" },
-    { "ticker": "WDEF",    "yahooTicker": "WDEF.L",  "name": "WisdomTree Europe Defence",    "shares": 175, "avgCost": 24.83,   "account": "IG GBP", "theme": "Defence / Aerospace",   "ccy": "GBP" },
-    { "ticker": "IAUP",    "yahooTicker": "IAUP.L",  "name": "iShares Gold Producers",       "shares": 200, "avgCost": 22.92,   "account": "IG GBP", "theme": "Precious Metals",       "ccy": "GBP" },
+    { "ticker": "FLRK",    "yahooTicker": "FLRK.L",  "name": "Franklin FTSE Korea ETF",      "shares": 100, "avgCost": 50.87,   "account": "IG GBP", "theme": "International / EM",    "ccy": "GBP" },
+    { "ticker": "WDEP",    "yahooTicker": "WDEP.L",  "name": "WisdomTree Europe Defence",    "shares": 175, "avgCost": 24.83,   "account": "IG GBP", "theme": "Defence / Aerospace",   "ccy": "GBP" },
+    { "ticker": "SPGP",    "yahooTicker": "SPGP.L",  "name": "iShares Gold Producers",       "shares": 200, "avgCost": 22.92,   "account": "IG GBP", "theme": "Precious Metals",       "ccy": "GBP" },
     { "ticker": "SEMI",    "yahooTicker": "SEMI.L",  "name": "iShares Global Semis ETF",     "shares": 567, "avgCost": 7.37,    "account": "IG GBP", "theme": "Semis / AI Infra",      "ccy": "GBP" },
 
     { "ticker": "2330",    "yahooTicker": "2330.TW", "name": "TSMC (Taiwan)",                "shares": 50,  "avgCost": 1995.00, "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "TWD" },
