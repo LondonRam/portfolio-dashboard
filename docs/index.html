@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Command</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --text: #e4e4e7;
+      --muted: #71717a;
+      --dim: #52525b;
+      --green: #34d399;
+      --red: #f87171;
+      --amber: #fbbf24;
+      --semis: #6366f1;
+      --energy: #f59e0b;
+      --defence: #ef4444;
+      --minerals: #10b981;
+      --hyper: #3b82f6;
+      --intl: #8b5cf6;
+      --gold: #eab308;
+      --other: #6b7280;
+      --ibkr: #f97316;
+      --ig-usd: #22d3ee;
+      --ig-gbp: #a78bfa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 { font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+    .header .meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .header .fx { font-size: 12px; color: var(--muted); }
+    .header .fx span { color: var(--text); font-weight: 600; margin-left: 4px; }
+
+    .container { padding: 24px; max-width: 1600px; margin: 0 auto; }
+
+    /* Summary cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); margin-bottom: 4px; }
+    .card .value { font-size: 22px; font-weight: 700; }
+    .card .sub { font-size: 11px; color: var(--dim); margin-top: 4px; }
+
+    /* Grid layout */
+    .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-bottom: 24px; }
+    @media (max-width: 1024px) { .grid { grid-template-columns: 1fr; } }
+
+    /* Panels */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 12px 16px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--dim);
+    }
+    .panel-body { padding: 0 16px 16px; }
+
+    /* Theme bars */
+    .theme-row { margin-bottom: 12px; }
+    .theme-row .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .theme-row .left { display: flex; align-items: center; gap: 8px; }
+    .theme-row .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .theme-row .name { font-size: 13px; color: var(--text); }
+    .theme-row .right { display: flex; align-items: center; gap: 12px; font-size: 12px; }
+    .theme-row .val { color: var(--muted); }
+    .theme-row .pct { font-weight: 600; width: 48px; text-align: right; }
+    .bar-track { width: 100%; height: 6px; background: rgba(255,255,255,0.04); border-radius: 3px; }
+    .bar-fill { height: 6px; border-radius: 3px; transition: width 0.6s ease; }
+
+    /* Account bars */
+    .acct-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .acct-row .acct-name { font-size: 12px; color: var(--muted); width: 60px; }
+    .acct-row .bar-track { flex: 1; }
+    .acct-row .acct-val { font-size: 13px; width: 80px; text-align: right; }
+    .acct-row .acct-pct { font-size: 11px; color: var(--dim); width: 48px; text-align: right; }
+
+    /* Table */
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .table-controls .label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--dim); }
+    .btn-group { display: flex; gap: 4px; }
+    .btn-group button {
+      font-family: inherit;
+      font-size: 11px;
+      padding: 4px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--dim);
+      transition: all 0.15s;
+    }
+    .btn-group button.active { background: rgba(255,255,255,0.12); color: var(--text); }
+    .btn-group button:hover { color: var(--text); }
+
+    .table-wrap { overflow-x: auto; max-height: 600px; overflow-y: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead { position: sticky; top: 0; z-index: 2; }
+    thead th {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dim);
+      padding: 8px 12px;
+      text-align: left;
+      background: var(--bg);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    thead th:hover { color: var(--text); }
+    thead th.r { text-align: right; }
+    tbody tr { transition: background 0.1s; }
+    tbody tr:hover { background: rgba(255,255,255,0.04); }
+    tbody td { padding: 8px 12px; white-space: nowrap; }
+    td.r { text-align: right; }
+    .ticker-cell { display: flex; align-items: center; gap: 8px; }
+    .ticker-cell .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .ticker-cell .sym { font-weight: 600; color: #fff; }
+    .name-cell { color: var(--muted); font-size: 12px; }
+    .acct-badge {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 99px;
+      display: inline-block;
+    }
+    .group-header td {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--dim);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--border);
+    }
+    .group-header .gh-inner { display: flex; align-items: center; gap: 8px; }
+    .group-header .gh-meta { color: var(--dim); opacity: 0.6; }
+
+    /* Winners / Losers */
+    .wl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) { .wl-grid { grid-template-columns: 1fr; } }
+    .wl-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+    }
+    .wl-row .left { display: flex; align-items: center; gap: 8px; }
+    .wl-row .right { display: flex; align-items: center; gap: 12px; }
+    .wl-row .sym { font-size: 13px; color: var(--text); }
+    .wl-row .pnl { font-size: 13px; }
+    .wl-row .pct { font-size: 11px; color: var(--dim); }
+
+    /* Loading */
+    .loading { text-align: center; padding: 80px; color: var(--muted); font-size: 14px; }
+    .error { text-align: center; padding: 80px; color: var(--red); font-size: 14px; }
+
+    /* Colour helpers */
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+    .amber { color: var(--amber); }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>PORTFOLIO COMMAND</h1>
+      <div class="meta" id="meta-line">Loading...</div>
+    </div>
+    <div class="fx" id="fx-line"></div>
+  </div>
+
+  <div class="container" id="app">
+    <div class="loading">Fetching portfolio data...</div>
+  </div>
+
+  <script>
+    const THEME_COLORS = {
+      "Semis / AI Infra": "#6366f1",
+      "Power / Energy": "#f59e0b",
+      "Defence / Aerospace": "#ef4444",
+      "Critical Minerals": "#10b981",
+      "Hyperscalers / Tech": "#3b82f6",
+      "International / EM": "#8b5cf6",
+      "Precious Metals": "#eab308",
+      "Other": "#6b7280",
+    };
+    const ACCT_COLORS = { "IBKR": "#f97316", "IG USD": "#22d3ee", "IG GBP": "#a78bfa" };
+
+    let currentGroupBy = "theme";
+    let currentSort = "valueUSD";
+    let currentSortDir = "desc";
+    let portfolioData = null;
+
+    function fmt$(n) {
+      const abs = Math.abs(n);
+      if (abs >= 1e6) return "$" + (n / 1e6).toFixed(2) + "M";
+      if (abs >= 1000) return "$" + (n / 1000).toFixed(1) + "K";
+      return "$" + n.toFixed(0);
+    }
+    function fmtPct(n) { return (n >= 0 ? "+" : "") + n.toFixed(1) + "%"; }
+    function pnlClass(n) { return n >= 0 ? "positive" : "negative"; }
+    function cleanTicker(t) { return t.replace("_IB", ""); }
+
+    async function loadData() {
+      try {
+        const res = await fetch("data/portfolio.json?" + Date.now());
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        portfolioData = await res.json();
+        render(portfolioData);
+      } catch (e) {
+        document.getElementById("app").innerHTML = `<div class="error">Failed to load portfolio data: ${e.message}<br><br>Run the update script first: <code>python scripts/update_prices.py</code></div>`;
+      }
+    }
+
+    function render(data) {
+      const { meta, summary, themes, accounts, holdings } = data;
+
+      // Header
+      const updatedAt = new Date(meta.updatedAt);
+      const dateStr = updatedAt.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+      document.getElementById("meta-line").textContent = `${meta.positionCount} positions · 3 accounts · Updated: ${dateStr}`;
+
+      const fx = meta.fxRates;
+      document.getElementById("fx-line").innerHTML = `
+        GBP/USD <span>${fx.GBPUSD?.toFixed(4) || "—"}</span> &nbsp;
+        EUR/USD <span>${fx.EURUSD?.toFixed(4) || "—"}</span> &nbsp;
+        TWD/USD <span>${fx.TWDUSD?.toFixed(4) || "—"}</span>
+      `;
+
+      // Find IBKR account for margin info
+      const ibkr = accounts.find(a => a.account === "IBKR") || {};
+      const igUsd = accounts.find(a => a.account === "IG USD") || {};
+      const igGbp = accounts.find(a => a.account === "IG GBP") || {};
+      const cashValue = (igUsd.valueUSD || 0) + (igGbp.valueUSD || 0);
+      const marginPct = ibkr.marginUtilPct || 0;
+
+      let html = "";
+
+      // Summary cards
+      html += `<div class="cards">
+        <div class="card">
+          <div class="label">Total Portfolio</div>
+          <div class="value">${fmt$(summary.totalValueUSD)}</div>
+          <div class="sub">Cost: ${fmt$(summary.totalCostUSD)}</div>
+        </div>
+        <div class="card">
+          <div class="label">Total P&L</div>
+          <div class="value ${pnlClass(summary.totalPnLUSD)}">${(summary.totalPnLUSD >= 0 ? "+" : "") + fmt$(summary.totalPnLUSD)}</div>
+          <div class="sub">${fmtPct(summary.totalPnLPct)}</div>
+        </div>
+        <div class="card">
+          <div class="label">IBKR Margin</div>
+          <div class="value ${marginPct > 60 ? "amber" : "positive"}">${marginPct.toFixed(0)}%</div>
+          <div class="sub">${fmt$(ibkr.marginDebt || 0)} debt / ${fmt$(ibkr.valueUSD || 0)} gross</div>
+        </div>
+        <div class="card">
+          <div class="label">Cash Accounts</div>
+          <div class="value" style="color:#22d3ee">${fmt$(cashValue)}</div>
+          <div class="sub">IG USD + IG GBP (no margin)</div>
+        </div>
+        <div class="card">
+          <div class="label">Positions</div>
+          <div class="value">${meta.positionCount}</div>
+          <div class="sub">${ibkr.positions || 0} IBKR · ${igUsd.positions || 0} IG USD · ${igGbp.positions || 0} IG GBP</div>
+        </div>
+      </div>`;
+
+      // Grid: left sidebar + table
+      html += `<div class="grid">`;
+
+      // Left: themes + accounts
+      html += `<div>`;
+
+      // Theme allocation
+      html += `<div class="panel" style="margin-bottom:24px">
+        <div class="panel-header">Theme Allocation</div>
+        <div class="panel-body">`;
+      for (const t of themes) {
+        const color = THEME_COLORS[t.theme] || "#6b7280";
+        html += `<div class="theme-row">
+          <div class="top">
+            <div class="left">
+              <div class="dot" style="background:${color}"></div>
+              <div class="name">${t.theme}</div>
+            </div>
+            <div class="right">
+              <span class="val">${fmt$(t.valueUSD)}</span>
+              <span class="${pnlClass(t.pnlPct)}" style="font-size:11px">${fmtPct(t.pnlPct)}</span>
+              <span class="pct">${t.weightPct.toFixed(1)}%</span>
+            </div>
+          </div>
+          <div class="bar-track"><div class="bar-fill" style="width:${t.weightPct}%;background:${color}"></div></div>
+        </div>`;
+      }
+      html += `</div></div>`;
+
+      // Account split
+      html += `<div class="panel">
+        <div class="panel-header">Account Split</div>
+        <div class="panel-body">`;
+      for (const a of accounts) {
+        const color = ACCT_COLORS[a.account] || "#6b7280";
+        html += `<div class="acct-row">
+          <span class="acct-name">${a.account}</span>
+          <div class="bar-track"><div class="bar-fill" style="width:${a.weightPct}%;background:${color}"></div></div>
+          <span class="acct-val">${fmt$(a.valueUSD)}</span>
+          <span class="acct-pct">${a.weightPct.toFixed(1)}%</span>
+        </div>`;
+      }
+      html += `</div></div>`;
+
+      html += `</div>`;
+
+      // Right: holdings table
+      html += `<div>
+        <div class="panel">
+          <div class="table-controls">
+            <span class="label">Holdings</span>
+            <div class="btn-group">
+              <button onclick="setGroup('theme')" class="${currentGroupBy === 'theme' ? 'active' : ''}">Theme</button>
+              <button onclick="setGroup('account')" class="${currentGroupBy === 'account' ? 'active' : ''}">Account</button>
+              <button onclick="setGroup('none')" class="${currentGroupBy === 'none' ? 'active' : ''}">Flat</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th onclick="setSort('ticker')">Ticker</th>
+                <th class="name-col">Name</th>
+                <th class="r" onclick="setSort('shares')">Qty</th>
+                <th class="r" onclick="setSort('valueUSD')">Value</th>
+                <th class="r" onclick="setSort('pnlUSD')">P&L $</th>
+                <th class="r" onclick="setSort('pnlPct')">P&L %</th>
+                <th>Acct</th>
+              </tr></thead>
+              <tbody id="holdings-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>`;
+
+      html += `</div>`; // close grid
+
+      // Winners / Losers
+      const sorted = [...holdings].sort((a, b) => b.pnlUSD - a.pnlUSD);
+      const winners = sorted.slice(0, 5);
+      const losers = sorted.slice(-5).reverse();
+
+      html += `<div class="wl-grid">
+        <div class="panel">
+          <div class="panel-header">Top Winners (by $ P&L)</div>
+          <div class="panel-body">`;
+      for (const h of winners) {
+        const color = THEME_COLORS[h.theme] || "#6b7280";
+        html += `<div class="wl-row">
+          <div class="left"><div class="dot" style="width:6px;height:6px;border-radius:50%;background:${color}"></div><span class="sym">${cleanTicker(h.ticker)}</span></div>
+          <div class="right"><span class="pnl positive">+${fmt$(h.pnlUSD)}</span><span class="pct">${fmtPct(h.pnlPct)}</span></div>
+        </div>`;
+      }
+      html += `</div></div>`;
+
+      html += `<div class="panel">
+          <div class="panel-header">Biggest Losers (by $ P&L)</div>
+          <div class="panel-body">`;
+      for (const h of losers) {
+        const color = THEME_COLORS[h.theme] || "#6b7280";
+        html += `<div class="wl-row">
+          <div class="left"><div class="dot" style="width:6px;height:6px;border-radius:50%;background:${color}"></div><span class="sym">${cleanTicker(h.ticker)}</span></div>
+          <div class="right"><span class="pnl negative">${fmt$(h.pnlUSD)}</span><span class="pct">${fmtPct(h.pnlPct)}</span></div>
+        </div>`;
+      }
+      html += `</div></div></div>`;
+
+      document.getElementById("app").innerHTML = html;
+      renderTable();
+    }
+
+    function renderTable() {
+      if (!portfolioData) return;
+      const holdings = [...portfolioData.holdings];
+
+      // Sort
+      holdings.sort((a, b) => {
+        let va = a[currentSort], vb = b[currentSort];
+        if (typeof va === "string") return currentSortDir === "asc" ? va.localeCompare(vb) : vb.localeCompare(va);
+        return currentSortDir === "asc" ? va - vb : vb - va;
+      });
+
+      // Group
+      let groups;
+      if (currentGroupBy === "none") {
+        groups = { "All": holdings };
+      } else {
+        groups = {};
+        const key = currentGroupBy === "theme" ? "theme" : "account";
+        // Preserve order from summary data
+        const order = currentGroupBy === "theme"
+          ? portfolioData.themes.map(t => t.theme)
+          : portfolioData.accounts.map(a => a.account);
+        for (const g of order) groups[g] = [];
+        for (const h of holdings) {
+          const g = h[key];
+          if (!groups[g]) groups[g] = [];
+          groups[g].push(h);
+        }
+      }
+
+      let tbody = "";
+      for (const [group, items] of Object.entries(groups)) {
+        if (currentGroupBy !== "none") {
+          const gVal = items.reduce((s, h) => s + h.valueUSD, 0);
+          const color = currentGroupBy === "theme" ? (THEME_COLORS[group] || "#6b7280") : (ACCT_COLORS[group] || "#6b7280");
+          tbody += `<tr class="group-header"><td colspan="7">
+            <div class="gh-inner">
+              <div class="dot" style="width:8px;height:8px;border-radius:50%;background:${color}"></div>
+              ${group}
+              <span class="gh-meta">(${items.length}) · ${fmt$(gVal)}</span>
+            </div>
+          </td></tr>`;
+        }
+        for (const h of items) {
+          const themeColor = THEME_COLORS[h.theme] || "#6b7280";
+          const acctColor = ACCT_COLORS[h.account] || "#6b7280";
+          tbody += `<tr>
+            <td><div class="ticker-cell"><div class="dot" style="background:${themeColor}"></div><span class="sym">${cleanTicker(h.ticker)}</span></div></td>
+            <td class="name-cell">${h.name}</td>
+            <td class="r" style="color:var(--muted)">${h.shares}</td>
+            <td class="r">${fmt$(h.valueUSD)}</td>
+            <td class="r ${pnlClass(h.pnlUSD)}">${(h.pnlUSD >= 0 ? "+" : "") + fmt$(h.pnlUSD)}</td>
+            <td class="r ${pnlClass(h.pnlPct)}">${fmtPct(h.pnlPct)}</td>
+            <td><span class="acct-badge" style="background:${acctColor}18;color:${acctColor}">${h.account}</span></td>
+          </tr>`;
+        }
+      }
+
+      const el = document.getElementById("holdings-body");
+      if (el) el.innerHTML = tbody;
+    }
+
+    function setGroup(g) {
+      currentGroupBy = g;
+      render(portfolioData);
+    }
+
+    function setSort(col) {
+      if (currentSort === col) currentSortDir = currentSortDir === "asc" ? "desc" : "asc";
+      else { currentSort = col; currentSortDir = "desc"; }
+      renderTable();
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

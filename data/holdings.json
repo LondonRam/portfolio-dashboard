@@ -1,0 +1,45 @@
+{
+  "accounts": {
+    "IG USD": { "type": "cash", "baseCurrency": "USD" },
+    "IG GBP": { "type": "cash", "baseCurrency": "GBP" },
+    "IBKR":   { "type": "margin", "baseCurrency": "USD", "marginDebt": 47640 }
+  },
+  "holdings": [
+    { "ticker": "ASML",    "yahooTicker": "ASML",    "name": "ASML Holding NV",              "shares": 8,   "avgCost": 941.72,  "account": "IG USD", "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "ASPI",    "yahooTicker": "ASPI",    "name": "ASP Isotopes Inc",             "shares": 250, "avgCost": 7.72,    "account": "IG USD", "theme": "Critical Minerals",     "ccy": "USD" },
+    { "ticker": "GOOGL",   "yahooTicker": "GOOGL",   "name": "Alphabet Inc",                 "shares": 45,  "avgCost": 237.89,  "account": "IG USD", "theme": "Hyperscalers / Tech",   "ccy": "USD" },
+    { "ticker": "AMZN",    "yahooTicker": "AMZN",    "name": "Amazon.com Inc",               "shares": 50,  "avgCost": 222.98,  "account": "IG USD", "theme": "Hyperscalers / Tech",   "ccy": "USD" },
+    { "ticker": "AAPL",    "yahooTicker": "AAPL",    "name": "Apple Inc",                    "shares": 25,  "avgCost": 238.50,  "account": "IG USD", "theme": "Hyperscalers / Tech",   "ccy": "USD" },
+    { "ticker": "NVDA",    "yahooTicker": "NVDA",    "name": "NVIDIA Corp",                  "shares": 50,  "avgCost": 177.95,  "account": "IG USD", "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "TSM",     "yahooTicker": "TSM",     "name": "Taiwan Semiconductor ADR",     "shares": 20,  "avgCost": 281.30,  "account": "IG USD", "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "VEU",     "yahooTicker": "VEU",     "name": "Vanguard FTSE All-World ex-US", "shares": 125, "avgCost": 69.50,   "account": "IG USD", "theme": "International / EM",    "ccy": "USD" },
+    { "ticker": "VOO",     "yahooTicker": "VOO",     "name": "Vanguard S&P 500 ETF",         "shares": 10,  "avgCost": 597.10,  "account": "IG USD", "theme": "Other",                 "ccy": "USD" },
+
+    { "ticker": "BRWM",    "yahooTicker": "BRWM.L",  "name": "BlackRock World Mining Trust",  "shares": 600, "avgCost": 8.55,    "account": "IG GBP", "theme": "Critical Minerals",     "ccy": "GBP" },
+    { "ticker": "FEML",    "yahooTicker": "FEML.L",  "name": "Fidelity Emerging Markets",    "shares": 400, "avgCost": 11.37,   "account": "IG GBP", "theme": "International / EM",    "ccy": "GBP" },
+    { "ticker": "FLXK",    "yahooTicker": "FLXK.L",  "name": "Franklin FTSE Korea ETF",      "shares": 100, "avgCost": 50.87,   "account": "IG GBP", "theme": "International / EM",    "ccy": "GBP" },
+    { "ticker": "WDEF",    "yahooTicker": "WDEF.L",  "name": "WisdomTree Europe Defence",    "shares": 175, "avgCost": 24.83,   "account": "IG GBP", "theme": "Defence / Aerospace",   "ccy": "GBP" },
+    { "ticker": "IAUP",    "yahooTicker": "IAUP.L",  "name": "iShares Gold Producers",       "shares": 200, "avgCost": 22.92,   "account": "IG GBP", "theme": "Precious Metals",       "ccy": "GBP" },
+    { "ticker": "SEMI",    "yahooTicker": "SEMI.L",  "name": "iShares Global Semis ETF",     "shares": 567, "avgCost": 7.37,    "account": "IG GBP", "theme": "Semis / AI Infra",      "ccy": "GBP" },
+
+    { "ticker": "2330",    "yahooTicker": "2330.TW", "name": "TSMC (Taiwan)",                "shares": 50,  "avgCost": 1995.00, "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "TWD" },
+    { "ticker": "ASX",     "yahooTicker": "ASX",     "name": "ASE Technology",               "shares": 200, "avgCost": 22.76,   "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "AVDV",    "yahooTicker": "AVDV",    "name": "Avantis Intl Small Cap Value",  "shares": 40,  "avgCost": 108.25,  "account": "IBKR",   "theme": "International / EM",    "ccy": "USD" },
+    { "ticker": "AVGO",    "yahooTicker": "AVGO",    "name": "Broadcom Inc",                 "shares": 20,  "avgCost": 318.93,  "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "BE",      "yahooTicker": "BE",      "name": "Bloom Energy",                 "shares": 20,  "avgCost": 155.00,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" },
+    { "ticker": "CEG",     "yahooTicker": "CEG",     "name": "Constellation Energy",         "shares": 15,  "avgCost": 304.09,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" },
+    { "ticker": "DSCSY",   "yahooTicker": "DSCSY",   "name": "Disco Corp ADR",               "shares": 100, "avgCost": 48.25,   "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "DUK",     "yahooTicker": "DUK",     "name": "Duke Energy",                  "shares": 25,  "avgCost": 128.06,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" },
+    { "ticker": "EWY",     "yahooTicker": "EWY",     "name": "iShares MSCI South Korea",     "shares": 80,  "avgCost": 136.53,  "account": "IBKR",   "theme": "International / EM",    "ccy": "USD" },
+    { "ticker": "HY9H",    "yahooTicker": "HY9H.F",  "name": "SK Hynix (Frankfurt)",         "shares": 30,  "avgCost": 606.93,  "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "EUR" },
+    { "ticker": "LEU",     "yahooTicker": "LEU",     "name": "Centrus Energy",               "shares": 20,  "avgCost": 201.75,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" },
+    { "ticker": "MU",      "yahooTicker": "MU",      "name": "Micron Technology",            "shares": 20,  "avgCost": 407.50,  "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "NBIS",    "yahooTicker": "NBIS",    "name": "Nebius Group",                 "shares": 100, "avgCost": 92.73,   "account": "IBKR",   "theme": "Hyperscalers / Tech",   "ccy": "USD" },
+    { "ticker": "NVDA_IB", "yahooTicker": "NVDA",    "name": "NVIDIA Corp (IBKR)",           "shares": 20,  "avgCost": 180.56,  "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "OIH",     "yahooTicker": "OIH",     "name": "VanEck Oil Services ETF",      "shares": 5,   "avgCost": 395.50,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" },
+    { "ticker": "PPA",     "yahooTicker": "PPA",     "name": "Invesco Aerospace & Defense",  "shares": 25,  "avgCost": 177.31,  "account": "IBKR",   "theme": "Defence / Aerospace",   "ccy": "USD" },
+    { "ticker": "PTF",     "yahooTicker": "PTF",     "name": "Invesco Tech Momentum",        "shares": 25,  "avgCost": 91.99,   "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "SNDK",    "yahooTicker": "SNDK",    "name": "Sandisk Corp",                 "shares": 7,   "avgCost": 629.86,  "account": "IBKR",   "theme": "Semis / AI Infra",      "ccy": "USD" },
+    { "ticker": "VST",     "yahooTicker": "VST",     "name": "Vistra Corp",                  "shares": 25,  "avgCost": 168.75,  "account": "IBKR",   "theme": "Power / Energy",        "ccy": "USD" }
+  ]
+}
