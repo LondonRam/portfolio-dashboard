@@ -1,38 +1,38 @@
 {
   "meta": {
-    "updatedAt": "2026-03-01T20:55:51.019527+00:00",
+    "updatedAt": "2026-03-01T21:09:26.743553+00:00",
     "positionCount": 34,
     "baseCurrency": "USD",
     "fxRates": {
-      "GBPUSD": 1.341904,
-      "EURUSD": 1.182872,
+      "GBPUSD": 1.34203,
+      "EURUSD": 1.183292,
       "TWDUSD": 0.031907
     }
   },
   "summary": {
-    "totalValueUSD": 244269.78,
-    "totalCostUSD": 212863.42,
-    "totalPnLUSD": 31406.36,
-    "totalPnLPct": 14.75
+    "totalValueUSD": 236860.6,
+    "totalCostUSD": 212874.56,
+    "totalPnLUSD": 23986.04,
+    "totalPnLPct": 11.27
   },
   "themes": [
     {
       "theme": "Semis / AI Infra",
-      "valueUSD": 94986.87,
-      "costUSD": 86610.71,
-      "pnlUSD": 8376.16,
+      "valueUSD": 94995.23,
+      "costUSD": 86618.88,
+      "pnlUSD": 8376.35,
       "pnlPct": 9.67,
       "positions": 13,
-      "weightPct": 38.89
+      "weightPct": 40.11
     },
     {
       "theme": "International / EM",
-      "valueUSD": 44751.73,
-      "costUSD": 36869.14,
-      "pnlUSD": 7882.59,
-      "pnlPct": 21.38,
+      "valueUSD": 41905.64,
+      "costUSD": 36870.36,
+      "pnlUSD": 5035.28,
+      "pnlPct": 13.66,
       "positions": 5,
-      "weightPct": 18.32
+      "weightPct": 17.69
     },
     {
       "theme": "Hyperscalers / Tech",
@@ -41,7 +41,7 @@
       "pnlUSD": 3163.15,
       "pnlPct": 8.53,
       "positions": 4,
-      "weightPct": 16.48
+      "weightPct": 16.99
     },
     {
       "theme": "Power / Energy",
@@ -50,34 +50,34 @@
       "pnlUSD": 622.65,
       "pnlPct": 2.95,
       "positions": 6,
-      "weightPct": 8.89
-    },
-    {
-      "theme": "Precious Metals",
-      "valueUSD": 14071.2,
-      "costUSD": 6151.29,
-      "pnlUSD": 7919.91,
-      "pnlPct": 128.75,
-      "positions": 1,
-      "weightPct": 5.76
+      "weightPct": 9.17
     },
     {
       "theme": "Defence / Aerospace",
-      "valueUSD": 12552.17,
-      "costUSD": 10263.66,
-      "pnlUSD": 2288.51,
-      "pnlPct": 22.3,
+      "valueUSD": 11599.41,
+      "costUSD": 10264.2,
+      "pnlUSD": 1335.21,
+      "pnlPct": 13.01,
       "positions": 2,
-      "weightPct": 5.14
+      "weightPct": 4.9
+    },
+    {
+      "theme": "Precious Metals",
+      "valueUSD": 10451.73,
+      "costUSD": 6151.86,
+      "pnlUSD": 4299.87,
+      "pnlPct": 69.9,
+      "positions": 1,
+      "weightPct": 4.41
     },
     {
       "theme": "Critical Minerals",
-      "valueUSD": 9627.96,
-      "costUSD": 8813.97,
-      "pnlUSD": 813.99,
+      "valueUSD": 9628.74,
+      "costUSD": 8814.61,
+      "pnlUSD": 814.13,
       "pnlPct": 9.24,
       "positions": 2,
-      "weightPct": 3.94
+      "weightPct": 4.07
     },
     {
       "theme": "Other",
@@ -86,7 +86,7 @@
       "pnlUSD": 339.4,
       "pnlPct": 5.68,
       "positions": 1,
-      "weightPct": 2.58
+      "weightPct": 2.66
     }
   ],
   "accounts": [
@@ -94,14 +94,14 @@
       "account": "IBKR",
       "type": "margin",
       "baseCurrency": "USD",
-      "valueUSD": 111252.74,
-      "costUSD": 108998.17,
-      "pnlUSD": 2254.57,
+      "valueUSD": 111260.39,
+      "costUSD": 109005.81,
+      "pnlUSD": 2254.58,
       "pnlPct": 2.07,
       "positions": 19,
-      "weightPct": 45.55,
+      "weightPct": 46.97,
       "marginDebt": 47640,
-      "netLiquidation": 63612.74,
+      "netLiquidation": 63620.39,
       "marginUtilPct": 42.82
     },
     {
@@ -113,18 +113,18 @@
       "pnlUSD": 10499.87,
       "pnlPct": 15.8,
       "positions": 9,
-      "weightPct": 31.51
+      "weightPct": 32.49
     },
     {
       "account": "IG GBP",
       "type": "cash",
       "baseCurrency": "GBP",
-      "valueUSD": 56054.86,
-      "costUSD": 37402.94,
-      "pnlUSD": 18651.92,
-      "pnlPct": 49.87,
+      "valueUSD": 48638.03,
+      "costUSD": 37406.44,
+      "pnlUSD": 11231.59,
+      "pnlPct": 30.03,
       "positions": 6,
-      "weightPct": 22.95
+      "weightPct": 20.53
     }
   ],
   "holdings": [
@@ -287,13 +287,13 @@
       "name": "BlackRock World Mining Trust",
       "shares": 600,
       "avgCost": 8.55,
-      "avgCostUSD": 11.4733,
+      "avgCostUSD": 11.4744,
       "localPrice": 10.3,
-      "priceUSD": 13.8216,
+      "priceUSD": 13.8229,
       "ccy": "GBP",
-      "valueUSD": 8292.96,
-      "costUSD": 6883.97,
-      "pnlUSD": 1409.0,
+      "valueUSD": 8293.74,
+      "costUSD": 6884.61,
+      "pnlUSD": 1409.13,
       "pnlPct": 20.47,
       "account": "IG GBP",
       "theme": "Critical Minerals"
@@ -304,65 +304,65 @@
       "name": "Fidelity Emerging Markets",
       "shares": 400,
       "avgCost": 11.37,
-      "avgCostUSD": 15.2574,
+      "avgCostUSD": 15.2589,
       "localPrice": 13.08,
-      "priceUSD": 17.5521,
+      "priceUSD": 17.5537,
       "ccy": "GBP",
-      "valueUSD": 7020.84,
-      "costUSD": 6102.98,
-      "pnlUSD": 917.86,
+      "valueUSD": 7021.5,
+      "costUSD": 6103.55,
+      "pnlUSD": 917.95,
       "pnlPct": 15.04,
       "account": "IG GBP",
       "theme": "International / EM"
     },
     {
-      "ticker": "FLXK",
-      "yahooTicker": "FLXK.L",
+      "ticker": "FLRK",
+      "yahooTicker": "FLRK.L",
       "name": "Franklin FTSE Korea ETF",
       "shares": 100,
       "avgCost": 50.87,
-      "avgCostUSD": 68.2626,
-      "localPrice": 81.9,
-      "priceUSD": 109.9019,
+      "avgCostUSD": 68.2691,
+      "localPrice": 60.68,
+      "priceUSD": 81.4344,
       "ccy": "GBP",
-      "valueUSD": 10990.19,
-      "costUSD": 6826.26,
-      "pnlUSD": 4163.93,
-      "pnlPct": 61.0,
+      "valueUSD": 8143.44,
+      "costUSD": 6826.91,
+      "pnlUSD": 1316.53,
+      "pnlPct": 19.28,
       "account": "IG GBP",
       "theme": "International / EM"
     },
     {
-      "ticker": "WDEF",
-      "yahooTicker": "WDEF.L",
+      "ticker": "WDEP",
+      "yahooTicker": "WDEP.L",
       "name": "WisdomTree Europe Defence",
       "shares": 175,
       "avgCost": 24.83,
-      "avgCostUSD": 33.3195,
-      "localPrice": 34.175,
-      "priceUSD": 45.8596,
+      "avgCostUSD": 33.3226,
+      "localPrice": 30.115,
+      "priceUSD": 40.4152,
       "ccy": "GBP",
-      "valueUSD": 8025.42,
-      "costUSD": 5830.91,
-      "pnlUSD": 2194.52,
-      "pnlPct": 37.64,
+      "valueUSD": 7072.66,
+      "costUSD": 5831.45,
+      "pnlUSD": 1241.21,
+      "pnlPct": 21.28,
       "account": "IG GBP",
       "theme": "Defence / Aerospace"
     },
     {
-      "ticker": "IAUP",
-      "yahooTicker": "IAUP.L",
+      "ticker": "SPGP",
+      "yahooTicker": "SPGP.L",
       "name": "iShares Gold Producers",
       "shares": 200,
       "avgCost": 22.92,
-      "avgCostUSD": 30.7564,
-      "localPrice": 52.43,
-      "priceUSD": 70.356,
+      "avgCostUSD": 30.7593,
+      "localPrice": 38.94,
+      "priceUSD": 52.2586,
       "ccy": "GBP",
-      "valueUSD": 14071.2,
-      "costUSD": 6151.29,
-      "pnlUSD": 7919.92,
-      "pnlPct": 128.75,
+      "valueUSD": 10451.73,
+      "costUSD": 6151.86,
+      "pnlUSD": 4299.86,
+      "pnlPct": 69.9,
       "account": "IG GBP",
       "theme": "Precious Metals"
     },
@@ -372,13 +372,13 @@
       "name": "iShares Global Semis ETF",
       "shares": 567,
       "avgCost": 7.37,
-      "avgCostUSD": 9.8898,
+      "avgCostUSD": 9.8908,
       "localPrice": 10.06,
-      "priceUSD": 13.4996,
+      "priceUSD": 13.5008,
       "ccy": "GBP",
-      "valueUSD": 7654.25,
-      "costUSD": 5607.53,
-      "pnlUSD": 2046.71,
+      "valueUSD": 7654.96,
+      "costUSD": 5608.06,
+      "pnlUSD": 2046.9,
       "pnlPct": 36.5,
       "account": "IG GBP",
       "theme": "Semis / AI Infra"
@@ -542,13 +542,13 @@
       "name": "SK Hynix (Frankfurt)",
       "shares": 30,
       "avgCost": 606.93,
-      "avgCostUSD": 717.9205,
+      "avgCostUSD": 718.1754,
       "localPrice": 608.0,
-      "priceUSD": 719.1862,
+      "priceUSD": 719.4415,
       "ccy": "EUR",
-      "valueUSD": 21575.59,
-      "costUSD": 21537.62,
-      "pnlUSD": 37.97,
+      "valueUSD": 21583.24,
+      "costUSD": 21545.26,
+      "pnlUSD": 37.98,
       "pnlPct": 0.18,
       "account": "IBKR",
       "theme": "Semis / AI Infra"
